@@ -1,2 +1,3 @@
 # Berufsschule
-Aufgaben aus der Berufsschule BP
+Aufgaben aus der Berufsschule. 
+Fach: AS
