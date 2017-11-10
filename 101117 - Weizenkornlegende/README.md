@@ -30,3 +30,15 @@ Berechne die Anzahl von Weizenkörnern je Feld.
 `Schachbrett_1000000.java`
 
 ![1000000](./images/1000000.png)
+
+## Lösung mit Ausgabe der Zahlen als Normale Dezimalzahlen
+
+`Schachbrett_dezimalzahlen.java`
+
+https://docs.oracle.com/javase/tutorial/java/data/numberformat.html
+
+Die normale Ausgabe von Zahlen erfolgt in Wissenschaftlicher Schreibweise mit z.B. E5. Um "normale" Dezimalzahlen anzuzeigen, gibt es mehrere Möglichkeiten.
+Eine ist, die Zahlen in Strings umzuwandeln.
+Nachteil ist allerdings, dass Nachkommastellen vorher bekannt bzw. bestimmt werden müssen und keine Rechenoperationen mit Strings durchgeführt werden können.
+
+![doublezustring](images/doublezustring.png)
