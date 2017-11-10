@@ -1,7 +1,7 @@
 # Weizenkornlegende (16.10.17)
 https://de.wikipedia.org/wiki/Sissa_ibn_Dahir
 
-Auf einem Schachbrett liegt auf jedem Feld jeweild die doppelte Anzahl an Weizenkörnern, wie auf dem Feld davor.
+Auf einem Schachbrett liegt auf jedem Feld jeweils die doppelte Anzahl an Weizenkörnern, wie auf dem Feld davor.
 
 Berechne die Anzahl von Weizenkörnern je Feld.
 
