@@ -4,13 +4,12 @@ public class Aufgabe7 {
 
   public static void main (String[] args) {
     System.out.println("Aufgabe 7 - Wetterstation\n");
-    System.out.println("noch nicht vollständig. Aufgabe Temperatursprünge fehlt. \n");    
     
     //Wetterdaten
     int []tag = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
     int []temp = { 12, 14, 9, 12, 15, 16, 15, 15, 11, 8, 13, 13, 15, 12};
     
-    //Länge des Arrays wird durch arrayname.länge ausgerechnet
+    //LÃ¤nge des Arrays wird durch arrayname.lÃ¤nge ausgerechnet
     int arraytag_groesse = tag.length;
    
     //Durchschnittstemperatur
@@ -19,7 +18,7 @@ public class Aufgabe7 {
       //Gesamttemperatur ermitteln indem jeder Wert im Array zu der Variable "temp_gesamt" addiert wird.
       temp_gesamt = temp_gesamt+temp[i];       
     } // end of for     
-    //Gesamttemperatur durch Größe des Arrays gerechnet ergibt die Durchschnittstemperatur
+    //Gesamttemperatur durch GrÃ¶ÃŸe des Arrays gerechnet ergibt die Durchschnittstemperatur
     double temp_durchschnitt = temp_gesamt/arraytag_groesse;
 
 
@@ -27,14 +26,14 @@ public class Aufgabe7 {
     int temp_minimal = temp[0];
     int temp_maximal = temp[0];
     for (int i = 0;i<=arraytag_groesse-1 ;i++ ) {
-      //Den ersten Temperaturwert im Array übernehmen und mit dem nächsten Wert vergleichen.
-      //Wenn der Wert größer/kleiner ist, dann diesen Wert übernehmen
+      //Den ersten Temperaturwert im Array Ã¼bernehmen und mit dem nÃ¤chsten Wert vergleichen.
+      //Wenn der Wert grÃ¶ÃŸer/kleiner ist, dann diesen Wert Ã¼bernehmen
       
       //finde kleinsten Wert
       if (temp[i]<temp_minimal) {
          temp_minimal = temp[i];
       } // end of if
-      //finde größten Wert
+      //finde grÃ¶ÃŸten Wert
       if (temp[i]>temp_maximal) {
         temp_maximal = temp[i];
       } // end of if
@@ -42,8 +41,8 @@ public class Aufgabe7 {
 
     //Temperatur Tabelle 
     System.out.println("-------------------------");
-    System.out.println("| Tag  | Temperatur [°C]|");
-    //Damit die Tabelle gleichmäßig dargestellt wird, wird ein extra Leerzeichen hinzugefügt, falls die Temperatur einstellig ist.    
+    System.out.println("| Tag  | Temperatur [Â°C]|");
+    //Damit die Tabelle gleichmÃ¤ÃŸig dargestellt wird, wird ein extra Leerzeichen hinzugefÃ¼gt, falls die Temperatur einstellig ist.    
     for (int i = 0;i<=arraytag_groesse-1 ;i++ ) {
       String fueller_tag = "";
       if (tag[i]<10) {
@@ -61,7 +60,7 @@ public class Aufgabe7 {
     
     
     //Datenausgabe
-    System.out.println("\nDurchschnittstemperatur über " +arraytag_groesse+ " Tage: "+temp_durchschnitt);
+    System.out.println("\nDurchschnittstemperatur Ã¼ber " +arraytag_groesse+ " Tage: "+temp_durchschnitt);
     System.out.println("Die minimale Temperatur war: " + temp_minimal);
     System.out.println("Die maximale Temperatur war: " + temp_maximal);
     System.out.println("\nENDE");
