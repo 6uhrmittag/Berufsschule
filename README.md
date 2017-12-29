@@ -8,3 +8,5 @@ Eine Aufgabe pro Ordner, Lösungsvarianten jeweils als eigene Datei
 
 Eine Readme.md pro Ordner/Aufgabe mit Aufgabenbeschreibung usw.
 
+# Software
+Überwiegend wurde die IDE Java-Editor: http://javaeditor.orgbenutzt.
