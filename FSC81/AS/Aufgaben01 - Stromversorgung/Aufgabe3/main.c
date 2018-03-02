@@ -30,6 +30,10 @@ int main(int argc, char *argv[]) {
 	
 	int eingabe_hex = 0;
 	
+	int rot = 0;
+	int gruen = 0;
+	int blau = 0;
+	
 	char sHexFarbcode[7+1];
 	
 	/* Eingabe */ 
@@ -39,7 +43,7 @@ int main(int argc, char *argv[]) {
 	printf("Welche Hex-Farbe soll umgewandelt werden: #");	
   	scanf("%s", sHexFarbcode);
   	
-
+  	
 	int i=0;
 	for(i; i<6; i++) {
 		int wert = 0;
@@ -65,13 +69,24 @@ int main(int argc, char *argv[]) {
             }
       }
       
-	printf("%d\n", wert);
+	switch(i+1) {
+		case 1: rot = rot + (wert * 16); break;
+		case 2: rot = rot + (wert * 1); break;
+		case 3: gruen = gruen + (wert * 16); break;
+		case 4: gruen = gruen + (wert * 1); break;
+		case 5: blau = blau + (wert * 16); break;
+		case 6: blau = blau + (wert * 1); break;
+	}    
+      
+
 
 
 
 	//printf("Farbe eingegeben: %c\n", x);
 	}
-
+	printf("rot: %d\n", rot);
+	printf("gruen: %d\n", gruen);
+	printf("blau: %d\n", blau);
 
 	
 	
