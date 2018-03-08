@@ -1,19 +1,20 @@
-﻿#Quellcode
+﻿# Quellcode
+
 Der Code ist versioniert unter https://github.com/6uhrmittag/Berufsschule/tree/master/FSC81/ITS/IoT-Projekt%20SmartHomePro/Ambi-Light
 
-#Arduino konfiguration
+# Arduino konfiguration
 - NodeMCU .0
 - COM 3
 
-#Wichtig
+# Wichtig
 - SSID-Password muss mindestens 8 Zeichen lang sein
 
-#Verbindungstest
+# Verbindungstest
 - Beispiel geladen "ESP8266LEDServer.ino"
 - SSID und Password geändert
 
 
-#Hinzufügen der Übergabe von Hex Prametern
+# Hinzufügen der Übergabe von Hex Prametern
 Nimmt den Hex-Code an, wenn die URL "http:$IP/farbe?hex=FFFFFF" aufgerufen wird
 -----------
 server.on("/farbe", []() {
@@ -25,7 +26,7 @@ server.on("/farbe", []() {
     Serial.println(hex);
   });
 ----------
-#Hinzufügen der Umrechung
+# Hinzufügen der Umrechung
 Funktion aus AS umrechnung()
 Umrechung unter https://github.com/6uhrmittag/Berufsschule/blob/master/FSC81/AS/Aufgaben01%20-%20Stromversorgung/Aufgabe3/main.c
 -----------
@@ -47,8 +48,8 @@ Umrechung unter https://github.com/6uhrmittag/Berufsschule/blob/master/FSC81/AS/
 
   });
 -------------
-#LED Ansteuerung
-##NeoPixel
+# LED Ansteuerung
+## NeoPixel
 Datenblatt: https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf
 Bibliothek: Adafruit_NeoPixel.h (installiert via Arduino Verwaltung)
 Bibliothek Doku: https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use
