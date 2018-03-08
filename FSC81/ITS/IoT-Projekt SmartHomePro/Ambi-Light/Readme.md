@@ -1,4 +1,4 @@
-#Arduino konfiguration
+ï»¿#Arduino konfiguration
 - NodeMCU .0
 - COM 3
 
@@ -7,10 +7,10 @@
 
 #Verbindungstest
 - Beispiel geladen "ESP8266LEDServer.ino"
-- SSID und Password geändert
+- SSID und Password geÃ¤ndert
 
 #NeoPixel
 Datenblatt: https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf
 Bibliothek: Adafruit_NeoPixel.h (installiert via Arduino Verwaltung)
 
-Impulsdiagram für Übertragung von "1010 1111 1111 1110 1001 1001"
+Impulsdiagram fÃ¼r Ãœbertragung von "1010 1111 1111 1110 1001 1001"
