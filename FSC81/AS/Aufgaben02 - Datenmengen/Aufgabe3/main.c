@@ -56,7 +56,7 @@ int main(int argc, char *argv[]) {
 		//printf("Lüfter langsam! \n");	
 	}
 	
-	if (untereTemperaturUeberschritten == 1){
+	if (obererTemperaturUeberschritten == 1){
 		luefterLangsam = 0;
 		luefterSchnell = 1;
 		//printf("Lüfter schnell! ");	
