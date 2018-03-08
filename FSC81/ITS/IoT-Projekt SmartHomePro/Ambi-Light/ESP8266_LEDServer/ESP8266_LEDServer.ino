@@ -4,6 +4,14 @@
 #include <ESP8266WebServer.h>
 
 
+//Definition für LED Pixel
+//Anzahl
+#define NUMPIXELS 8
+//Angeschlossen an
+#define PIN D2 
+Adafruit_NeoPixel pixels= Adafruit_NeoPixel(NUMPIXELS,PIN,NEO_GRB+NEO_KHZ800);
+
+
 const char* ssid = "WASZURHÖLLE";
 //password mindestens 8  Zeichen
 const char* password = "12345678";
@@ -60,6 +68,9 @@ void umrechnung(int* rot, int* gruen, int* blau, char sHexFarbcode[])
 
 
 void setup() {
+//Initierung der NeoPixel
+  pixels.begin(); // This initializes the NeoPixel library.
+
   pinMode(BUILTIN_LED, OUTPUT);
   pinMode(BUILTIN_LED, LOW);
 
@@ -104,6 +115,15 @@ void setup() {
     //Ausgabe der umgerechneten Farben auf der Webseite
     server.send(200, "text/plain", "Hex: " + hex + " Rot: " + rot + " Gruen: " + gruen +" Blau: " + blau);
 
+    //Für jeden Pixel die Farbe setzen
+    for(int i=0;i<NUMPIXELS;i++){
+      pixels.setPixelColor(i, rot,gruen,blau); // Moderately bright green color.
+    }
+    //Farbe anzeigen
+    pixels.show(); // This sends the updated pixel color to the hardware.
+
+
+    
   });
 
   server.begin();
