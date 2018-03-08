@@ -3,6 +3,7 @@
 #include <ESP8266WebServer.h>
 
 const char* ssid = "WASZURHÖLLE";
+//password mindestens 8  Zeichen
 const char* password = "12345678";
 
 ESP8266WebServer server(80);
@@ -50,4 +51,7 @@ void setup() {
 
 void loop(void) {
   server.handleClient();
+
+
+  
 }
