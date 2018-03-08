@@ -47,6 +47,8 @@ int main(int argc, char *argv[]) {
 	/* Alarm */
 	if (obererTemperaturUeberschritten != 0 || filterVerschmutzt == 1 || untereTemperaturUeberschritten != 0){
 		alarm = 1;
+	}else{
+		alarm = 0;
 	}
 	
 	if (untereTemperaturUeberschritten == 1){
