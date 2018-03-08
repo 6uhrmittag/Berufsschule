@@ -39,6 +39,14 @@ void setup() {
     server.send(200, "text/plain", "Led is now " + state);
   });
 
+  //Farbübertragung
+  server.on("/farbe", []() {
+    String hex = server.arg("hex");
+
+    //Test ob Farbe übernommen wurde
+    server.send(200, "text/plain", "Farbe: " + hex);
+  });
+
   server.begin();
   // Ausgabe auf Schnittstelle
   Serial.print("Fertig! Mit 'http://");
