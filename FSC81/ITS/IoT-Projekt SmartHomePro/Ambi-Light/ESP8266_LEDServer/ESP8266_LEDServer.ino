@@ -9,8 +9,8 @@ const char* ssid = "WASZURHÖLLE";
 const char* password = "12345678";
 
 ESP8266WebServer server(80);
-  int eingabe_hex = 0;
   
+  int eingabe_hex = 0;
   int rot = 0;
   int gruen = 0;
   int blau = 0;
@@ -92,24 +92,18 @@ void setup() {
   server.on("/farbe", []() {
     //Annahme der Hex-Codes OHNE "#"
     String hex = server.arg("hex");
-
-    //Test ob Farbe übernommen wurde
-    server.send(200, "text/plain", "Farbe: " + hex);
-    Serial.println(hex);
-
+    //Umwandlung in Char-Array
     hex.toCharArray(sHexFarbcode, 7);
-    Serial.print("sHexFarbcode: "); Serial.println(sHexFarbcode);
+    
+    //Ausgabe der eingegebenen Farbe auf der Webseite
+    //server.send(200, "text/plain", "Farbe: " + hex);
+    Serial.println(hex);
 
     //Umrechung
     umrechnung(&rot, &gruen, &blau, sHexFarbcode);
-    Serial.print("rot: "); Serial.println(rot);
-    Serial.print("gruen: "); Serial.println(gruen);
-    Serial.print("blau: "); Serial.println(blau);
-    
-//    Serial.print("rot: %d\n", rot);
-    //Serial.print("gruen: %d\n", gruen);
-   // Serial.print("blau: %d\n", blau);
-  
+    //Ausgabe der umgerechneten Farben auf der Webseite
+    server.send(200, "text/plain", "Hex: " + hex + " Rot: " + rot + " Gruen: " + gruen +" Blau: " + blau);
+
   });
 
   server.begin();
