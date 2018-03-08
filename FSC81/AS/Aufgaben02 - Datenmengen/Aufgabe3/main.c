@@ -47,19 +47,16 @@ int main(int argc, char *argv[]) {
 	/* Alarm */
 	if (obererTemperaturUeberschritten != 0 || filterVerschmutzt == 1 || untereTemperaturUeberschritten != 0){
 		alarm = 1;
-		//printf("Alarm!");	
 	}
 	
 	if (untereTemperaturUeberschritten == 1){
 		luefterLangsam = 1;
 		luefterSchnell = 0;
-		//printf("Lüfter langsam! \n");	
 	}
 	
 	if (obererTemperaturUeberschritten == 1){
 		luefterLangsam = 0;
 		luefterSchnell = 1;
-		//printf("Lüfter schnell! ");	
 	}
 		
 
