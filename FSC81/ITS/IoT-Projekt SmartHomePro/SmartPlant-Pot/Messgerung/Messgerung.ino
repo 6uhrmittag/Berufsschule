@@ -49,8 +49,8 @@ void loop() {
     gemessen_volt = gemessen_werte * (messspannung_max / messwert_max);
        
     
-    Serial.print("Out: ");
-    Serial.println(messspannung_volt);
+   // Serial.print("Out: ");
+  //  Serial.println(messspannung_volt);
   
     Serial.print("Mess: ");
     Serial.println(gemessen_volt);
