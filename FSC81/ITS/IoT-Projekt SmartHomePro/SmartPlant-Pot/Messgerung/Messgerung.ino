@@ -24,7 +24,7 @@ int messung_out = 1023;
 
 void setup() {
   // Serielle Verbindung starten
-  Serial.begin(9600);
+  Serial.begin(115200);
 }
 
 void loop() {
@@ -50,9 +50,9 @@ void loop() {
        
     
    // Serial.print("Out: ");
-  //  Serial.println(messspannung_volt);
+   // Serial.println(messspannung_volt);
   
-    Serial.print("Mess: ");
+    //Serial.print("Mess: ");
     Serial.println(gemessen_volt);
 
     
