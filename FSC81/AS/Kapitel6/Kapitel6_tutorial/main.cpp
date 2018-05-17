@@ -58,7 +58,8 @@ char eingabe_operation;
 printf("\n+-----------------------------+-----------------------------+\n| Datei | Bearbeiten |\n+-----------------------------+-----------------------------+\n| Oe(f)fnen | Neuer (E)intrag |\n| (S)peichern | Komplette Liste (a)nzeigen |\n| (B)eenden | Einen Namen s(u)chen |\n| | Einen Eintrag (l)oeschen |\n+-----------------------------+-----------------------------+\n");
 
 printf("\n\n");
-printf("Waehle eine Operation[Buchstabe]:"); 
+printf("Waehle eine Operation[Buchstabe]:");
+# vor %c ein Leerzeichen! -> https://gsamaras.wordpress.com/code/caution-when-reading-char-with-scanf-c/
 scanf(" %c", &eingabe_operation);
 printf("eingabe_operation = %c\n", eingabe_operation);
 
