@@ -20,6 +20,8 @@ typedef struct person
 
 int main(int argc, char* argv[])
 {
+	
+char eingabe_operation;
  //Definition und teilweise Initialisierung der Variable hans
  Person hans = {
 "Meyer",
@@ -57,6 +59,10 @@ printf("\n+-----------------------------+-----------------------------+\n| Datei
 
 printf("\n\n");
 printf("Waehle eine Operation[Buchstabe]:"); 
+scanf(" %c", &eingabe_operation);
+printf("eingabe_operation = %c\n", eingabe_operation);
+
+
  fflush(stdin);
  _getch();
 }
