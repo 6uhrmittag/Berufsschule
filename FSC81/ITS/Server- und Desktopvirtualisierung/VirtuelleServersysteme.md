@@ -28,6 +28,6 @@ Zwei Typen:
 - Hosted Hypervisor
  - Typ 2 Virtualisierung -> auch "Desktop-Virtualisierung". Benötigt OS, das zusätzliche Wartung erfordert wie ein normales OS.
 ## e. Welche Ressourcen können Sie in unserem Aufbau virtualisieren?
-- Server
-- Benutzerstorage
-- Netzwerk (VM Netz)
+- SDC
+
+# Planen Sie den Aufbau des Clusters und die benötigten Dienste
