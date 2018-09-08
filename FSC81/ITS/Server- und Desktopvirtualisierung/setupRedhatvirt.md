@@ -1,5 +1,5 @@
 # Installation Redhat Server
-##Server vorbereiten
+## Server vorbereiten
 - Kein PS2 Keyboard benutzen (error 52)
 - Festplatten in Raid1 (Strg+C bei boot)
 ## Download iso
@@ -12,16 +12,14 @@
 - root passwort erstellen
 - user erstellen
 
-# Installation  RED HAT VIRTUALIZATION 4.2
+# Installation RED HAT VIRTUALIZATION 4.2
 ## login
 - login via Putty nach Installation möglich (auch root)
 ## System zu subscription hinzufügen
-- `subscription-manager register –auto-attach` (nicht getestet)
-manuell:
-````commandline
-subscription-manager register
-subscription-manager list --available
-subscription-manager attach --pool=pool_id
+- subscription-manager register --username <username> --password <password> --auto-attach
+
+## Repos hinzufügen
+````bash
 subscription-manager repos --disable=*
 subscription-manager repos --enable=rhel-7-server-rpms
 subscription-manager repos --enable=rhel-7-server-supplementary-rpms
@@ -38,3 +36,15 @@ subscription-manager repos --enable=jb-eap-7-for-rhel-7-server-rpms
 - Create a new conf file /etc/ovirt-engine/engine.conf.d/99-sso.conf
     - add: `SSO_CALLBACK_PREFIX_CHECK=false`
 
+## login
+user: admin
+passwort: das aus dem dialog
+
+## install hypervisor
+subscription-manager repos --enable=rhel-7-server-rhevh-rpms
+yum install rhev-hypervisor7
+https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Virtualization/3.3/html/Installation_Guide/Installing_the_Self-Hosted_Engine.html
+https://access.redhat.com/documentation/en-us/red_hat_virtualization/4.2/pdf/self-hosted_engine_guide/Red_Hat_Virtualization-4.2-Self-Hosted_Engine_Guide-en-US.pdf
+https://docs.aws.amazon.com/storagegateway/latest/userguide/CreatingAnNFSFileShare.html
+https://aws.amazon.com/de/getting-started/tutorials/create-network-file-system/
+http://blog.domb.net/?p=2141
