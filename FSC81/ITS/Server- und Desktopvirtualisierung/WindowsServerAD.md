@@ -1,20 +1,20 @@
-#server
-##user
+# server
+## user
 
 - name:`Administrator`
 - pw:`Imt2018!`
 
-###ad user
+### ad user
 
 - name: `aduser1`
 - pw: `Imt2018!`
 
-##Initialkonfiguration
+## Initialkonfiguration
 - statische IP einstellen
     - `10.0.2.15`
 - Computername ändern
     - powershell: `rename-computer -newname NAME -restart`
-##DNS
+## DNS
 - Rolle hinzufügen: DNS
     - powershell `Install-WindowsFeature DNS -IncludeManagementTools`
 - Forward-Zone erstellen `euhit.demo`
@@ -25,7 +25,7 @@
 - > nicht nötig: In Zone "euhit.demo" einen A-Eintrag mit Name "ad" und IP anlegen + PTR-Eintrag
 - > nicht nötig:  Auf Client testen mit "nslookup ad.euhit.demo" -> muss IP von AD zurückgeben
 
-##AD
+## AD
 - Rolle hinzufügen: "AD Domänendienste"
     - Wizard folgen
     - NICHT SCHLIEßen! -> Am Ende _Server zu einem Domänencontroller heraufstufen_
@@ -36,17 +36,17 @@
     - _Anmeldeinformationen zum Erstellen einer Delegierung angeben_ -> Logindaten
     - Wizard folgen -> Installieren
 
-###gruppen
+### gruppen
 - tools "Active Directory Benutzer und Computer"
     - euhit.demo -> Users -> Neu -> Gruppe
-###user
+### user
 - tools "Active Directory Benutzer und Computer"
     - euhit.demo -> Users -> Neu -> Benutzer
     - ausfüllen
     - zu gruppe hinzufügen
 
 
-###gruppenrichtlinie
+### gruppenrichtlinie
 - tools -> Gruppenrichtlinienverwaltung
 - Gruppenrichtlinienobjekte -> neu -> anlegen
 - Objekt auf die Domäne ziehen um sie zu Verknüpfen
@@ -54,11 +54,11 @@
 - Sicherheitsfilterung
     - benötigte gruppen hinzufügen
 
-##Freigabe
+## Freigabe
 - Normale Ordner-Freigabe wie unter Windows
 
-#client
-##user
+# client
+## user
 
 - name: `client`
 - pw: `Imt2018!`
