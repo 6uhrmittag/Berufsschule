@@ -6,7 +6,7 @@
 
 ###ad user
 
-- name: `aduser1
+- name: `aduser1`
 - pw: `Imt2018!`
 
 ##Initialkonfiguration
