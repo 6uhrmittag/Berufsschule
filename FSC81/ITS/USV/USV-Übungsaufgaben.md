@@ -2,7 +2,7 @@
 ## Berechnung und Eigenschaften
 
 # Aufgabe 1
-
+````
 1 * 750 =  750 W
 1 * 750 =  750 W
 1 * 450 =  450 W
@@ -22,6 +22,8 @@ Leistungsreserve = 30%
 (30%*3789,75) + 3789,75
 1136,925      + 3789,75 
 =               4926.68
+
+````
 
 Antwort: Es wird eine USV mit 4926.68VA benötigt
 
@@ -45,6 +47,7 @@ neue Bemessungsleitung = 1200VA + 1800VA
 neue Bemessungsleitung = 3000VA
 
 ### Akkupacks
+````
 60 min = (Anzahl Akkupacks * 20Ah * 24V) / (50%*3000VA)
 60 min = (Anzahl Akkupacks * 20Ah * 24V) / (50%*3000VA)
 60 min = (Anzahl Akkupacks *480AhV) / 1500VA
@@ -54,6 +57,9 @@ neue Bemessungsleitung = 3000VA
 1500/480 =  Anzahl Akkupacks
 3.125 =  Anzahl Akkupacks
 4 =  Anzahl Akkupacks
+````
+
+
 
 # Aufgabe 3
 
