@@ -110,9 +110,11 @@ Antwort: Die USV kann für 37min weniger die Unterbrechungsfreiheit gewährleist
 cb:
 
 # Aufgabe 5
+````text
 Überbrückungszeit = (Anzahl Akkupacks * Kapazität je Akkupack * Spannung) / (Belastungsleistung) 
 Überbrückungszeit = (2 * 25Ah * 12V) / 600VA
 Überbrückungszeit = 1h => 60min
+````
 
 # Azfgabe 6
 - a : Datenschutz 
