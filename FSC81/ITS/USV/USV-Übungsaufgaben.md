@@ -42,9 +42,12 @@ Gesucht:
 
 ## Rechnung
 ### neue Bemessungsleitung
+````
 neue Bemessungsleitung = max benötigte Leistung + nötige Leistungsreserve
 neue Bemessungsleitung = 1200VA + 1800VA
 neue Bemessungsleitung = 3000VA
+````
+
 
 ### Akkupacks
 ````
@@ -78,14 +81,19 @@ Gesucht: Zeit in min die die USV durch Zusatzlast weniger Überbrücken kann
 
 ### aktuelle überbrückungszeit
 mit Formel von oben
+````text
 Überbrückungszeit = (Anzahl Akkupacks * Kapazität je Akkupack * Spannung) / (Belastungsleistung) 
 Überbrückungszeit = (18 * 4.5Ah * 12V) / (750W)
 Überbrückungszeit = 1.296h => 1.296 * 60 = 77.76min => 77min
+````
 
 ### neue Überbrückungszeit
+````text
 Überbrückungszeit = (Anzahl Akkupacks * Kapazität je Akkupack * Spannung) / (Belastungsleistung) 
 Überbrückungszeit = (18 * 4.5Ah * 12V) / (1450W)
 Überbrückungszeit = 0.67034482758 => 0.67 * 60 = 40min
+````
+
 
 ### Differenz
 77min - 40min = 37min
