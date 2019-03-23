@@ -16,7 +16,7 @@ public class Main {
 
         zaehler = scanner.nextInt();
         nenner = scanner.nextInt();
-        operation = scanner.n
+        operation =
         int i = scanner.nextInt();
         System.out.println("Rechner " + i);
         /*
