@@ -114,12 +114,13 @@ key client.key
 ## test
 Zum Test kann ein nginx mit IP-Sperre genutzt werden.
 
-Mit aktivem VPN auf VM:
 ````bash
 apt install nginx
 vim /etc/nginx/sites-enabled/default
 ````
+Mit aktivem VPN auf VM:
 -  auf Host, via Browser: http://10.8.0.1/ -> nginx default seite
+-  auf Host, via Browser: http://192.168.50.4/ -> nginx default seite
 -  auf VM
 add:
 ````text
@@ -133,9 +134,9 @@ add:
         }
 ````
 `service nginx reload`
--  auf Host, via Browser: http://10.8.0.1/ -> 403 forbidden
+- auf Host, via Browser: http://10.8.0.1/ -> 403 forbidden
 - auf VM ` vim /var/log/nginx/error.log` -> IP von Host: forbidden
--  auf VM
+- auf VM
 add:
 ````text
         location / {
@@ -150,8 +151,12 @@ add:
 ````
 `service nginx reload`
 -  auf Host, via Browser: http://10.8.0.1/ -> nginx default seite
+-  auf Host, via Browser: http://192.168.50.4/ -> keine Verbindung möglich
 
-- VPN Trennen!
+VPN Trennen!
 -  auf Host, via Browser: http://10.8.0.1/ -> keine Verbindung möglich
-- VPN Verbinden!
+-  auf Host, via Browser: http://192.168.50.4/ -> keine Verbindung möglich
+
+VPN Verbinden!
 -  auf Host, via Browser: http://10.8.0.1/ -> Verbindung möglich
+-  auf Host, via Browser: http://192.168.50.4/ -> keine Verbindung möglich
