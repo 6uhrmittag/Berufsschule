@@ -45,7 +45,10 @@ mkdir /etc/openvpn/keys
 mv /usr/share/easy-rsa/keys/* /etc/openvpn/keys
 vim server.conf
 ````
-Path anpassen:
+
+**Achtung: Im Produktivsetup sollte bei den Keys sehr genau auf die Dateiberechtigung beschaut werden!**
+
+Pfade anpassen:
 ````text
 ca /etc/openvpn/keys/ca.crt
 cert /etc/openvpn/keys/myserver.crt
@@ -57,17 +60,18 @@ key /etc/openvpn/keys/myserver.key  # This file should be kept secret
 dh /etc/openvpn/keys/dh2048.pem
 
 ````
+````bash
+openvpn --genkey --secret ta.key
+
+````
 
 Client Daten auf Host kopieren:
 
 ````bash
 cp /etc/openvpn/keys/ca.crt /etc/openvpn/keys/client1.crt /etc/openvpn/keys/ca.crt /etc/openvpn/keys/client1.crt  /etc/openvpn/ta.key /vagrant
 ````
-
-Server starten
+Server starten:
 ````bash
-openvpn --genkey --secret ta.key
-
 service openvpn status
 service openvpn start
  
@@ -106,7 +110,9 @@ key client.key
 9. eigene: `Notified TAP-Windows driver to set a DHCP IP/netmask of 10.8.0.6/255.255.255.252 on interface `
 
 ## test
-mit aktivem VPN
+Zum Test kann ein nginx mit IP-Sperre genutzt werden.
+
+Mit aktivem VPN auf VM:
 ````bash
 apt install nginx
 vim /etc/nginx/sites-enabled/default
