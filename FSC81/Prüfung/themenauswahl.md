@@ -1,0 +1,4 @@
+# Logserver
+- centos
+- ubuntu
+- pfsense
