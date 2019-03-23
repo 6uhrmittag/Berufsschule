@@ -80,6 +80,8 @@ service openvpn@server start
 ````
 
 ## Client
+openvpn installieren: https://openvpn.net/community-downloads/
+
 1. Explorer: `C:\Users\$USERNAME\OpenVPN\config\`
 2. Dir erstellen `vm`
 3. Vorher kopiere Dateien aus `/vagrant` in `vm` kopieren
