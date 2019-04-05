@@ -44,9 +44,11 @@ source vars
 cd /etc/openvpn/
 mkdir /etc/openvpn/keys
 mv /usr/share/easy-rsa/keys/* /etc/openvpn/keys
+````
+von https://raw.githubusercontent.com/OpenVPN/openvpn/master/sample/sample-config-files/server.conf
+````bash
 vim server.conf
 ````
-
 **Achtung: Im Produktivsetup sollte bei den Keys sehr genau auf die Dateiberechtigung beschaut werden!**
 
 Pfade anpassen:
@@ -65,11 +67,14 @@ dh /etc/openvpn/keys/dh2048.pem
 openvpn --genkey --secret ta.key
 
 ````
-
+````bash
+cd keys
+openssl dhparam -out dh2048.pem 2048
+````
 Client Daten auf Host kopieren:
 
 ````bash
-cp /etc/openvpn/keys/ca.crt /etc/openvpn/keys/client1.crt /etc/openvpn/keys/ca.crt /etc/openvpn/keys/client1.crt  /etc/openvpn/ta.key /vagrant
+cp /etc/openvpn/keys/ca.crt /etc/openvpn/keys/client1.crt  /etc/openvpn/ta.key /etc/openvpn/keys/dh2048.pem /vagrant 
 ````
 Server starten:
 ````bash
