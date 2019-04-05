@@ -24,7 +24,6 @@ Protect client2 key with a password.  Build DH parms.  Generated files in ./keys
 
 ````
 
-
 CA-Daten anpassen:
 ````bash
 vim vars
@@ -45,7 +44,8 @@ cd /etc/openvpn/
 mkdir /etc/openvpn/keys
 mv /usr/share/easy-rsa/keys/* /etc/openvpn/keys
 ````
-von https://raw.githubusercontent.com/OpenVPN/openvpn/master/sample/sample-config-files/server.conf
+Inhalt von https://raw.githubusercontent.com/OpenVPN/openvpn/master/sample/sample-config-files/server.conf
+kopieren in:
 ````bash
 vim server.conf
 ````
@@ -165,3 +165,9 @@ VPN Trennen!
 VPN Verbinden!
 -  auf Host, via Browser: http://10.8.0.1/ -> Verbindung möglich
 -  auf Host, via Browser: http://192.168.50.4/ -> keine Verbindung möglich
+
+# client -> server
+Client installieren:
+````bash
+apt install openvpn
+````
