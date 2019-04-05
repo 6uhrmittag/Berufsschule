@@ -52,16 +52,15 @@ vim server.conf
 **Achtung: Im Produktivsetup sollte bei den Keys sehr genau auf die Dateiberechtigung beschaut werden!**
 
 Pfade anpassen:
+````bash
+vim server.conf
+````
 ````text
 ca /etc/openvpn/keys/ca.crt
 cert /etc/openvpn/keys/myserver.crt
 key /etc/openvpn/keys/myserver.key  # This file should be kept secret
 
-# Diffie hellman parameters.
-# Generate your own with:
-#   openssl dhparam -out dh2048.pem 2048
 dh /etc/openvpn/keys/dh2048.pem
-
 ````
 ````bash
 openvpn --genkey --secret ta.key
@@ -89,7 +88,7 @@ openvpn installieren: https://openvpn.net/community-downloads/
 
 1. Explorer: `C:\Users\$USERNAME\OpenVPN\config\`
 2. Dir erstellen `vm`
-3. Vorher kopiere Dateien aus `/vagrant` in `vm` kopieren
+3. Vorher kopierte Dateien aus `/vagrant` in `vm` kopieren
 4. `C:\Program Files\OpenVPN\sample-config\client.ovpn` nach `C:\Users\$USERNAME\OpenVPN\config\vm` kopieren
 5. `C:\Users\$USERNAME\OpenVPN\config\vm\client.ovpn` in Editor öffnen
 6. anpassen. IP von VM einfügen:
@@ -167,7 +166,15 @@ VPN Verbinden!
 -  auf Host, via Browser: http://192.168.50.4/ -> keine Verbindung möglich
 
 # client -> server
+Keys aus dem server /vagrant in das dir vom client kopieren
+
+cp /vagrant/* /etc/openvpn/
+client1 in client umbenennen
+
 Client installieren:
 ````bash
 apt install openvpn
 ````
+
+service openvpn@config start
+service openvpn@config status
