@@ -72,9 +72,8 @@ cd keys
 openssl dhparam -out dh2048.pem 2048
 ````
 Client Daten auf Host kopieren:
-
 ````bash
-cp /etc/openvpn/keys/ca.crt /etc/openvpn/keys/client1.crt  /etc/openvpn/ta.key /etc/openvpn/keys/dh2048.pem /vagrant 
+cp /etc/openvpn/keys/ca.crt /etc/openvpn/keys/client1.crt /etc/openvpn/keys/client1.key /etc/openvpn/ta.key /etc/openvpn/keys/dh2048.pem /vagrant 
 ````
 Server starten:
 ````bash
