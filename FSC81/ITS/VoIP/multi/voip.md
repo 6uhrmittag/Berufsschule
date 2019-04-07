@@ -3,7 +3,7 @@
 
 - wichtig: bei 'wie ist ihre Public IP' muss auf "manuell" gestellt werden und die lokale IP eingegeben werden.
     - Also die, die im Webbrowser angezeigt wird(192.168.50.9 - wird aber via DHCP vergeben und kann sich ändern)
-
+- die Webclient Telefonfunktion geht nur mit https!
 
 ## nebenstellen
 ### clients
