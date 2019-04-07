@@ -1,4 +1,14 @@
-#voipserver notes
+#desktop client
+nach dem booten
+1. die Netzwerkverbindung 0 eth0 deaktivieren
+2. in Netzwerkverbindung 1 eht1 die 
+    - default Route auf 192.168.40.4
+    - Reiter ipv4 die Route 192.168.40.5 via 192.168.40.4 einstellen
+3. Netzwerkverbindung 1 eht1 auf Wiredconnection umstellen
+
+(wird bei reboot von Vagrant resettet)
+
+#voipserver 
 # setup
 
 - wichtig: bei 'wie ist ihre Public IP' muss auf "manuell" gestellt werden und die lokale IP eingegeben werden.
