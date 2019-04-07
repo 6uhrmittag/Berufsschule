@@ -1,0 +1,86 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+current_dir = File.basename(Dir.getwd)
+
+Vagrant.configure(2) do |config|
+
+    ## Config Plugins
+    
+    # disable auto update guestools in case plugin is installed
+    config.vbguest.auto_update = false
+    
+
+    
+    # Plugin vagrant-cachier
+    # is unstable on Windows -> Problem unlinking file after apt install
+    # enable for testing only
+    # required plugins:
+    # http://fgrehm.viewdocs.io/vagrant-cachier/usage
+    required_plugins = %w(
+    vagrant-cachier
+    )
+    # autoinstall plugins to host
+    required_plugins.each do |plugin|
+        unless Vagrant.has_plugin? plugin
+            system "vagrant plugin install #{plugin}"
+        end
+    end
+    # config caching of apt files across all boxes
+    config.cache.enable :apt
+    # fix permission issue
+    # https://github.com/fgrehm/vagrant-cachier/issues/185
+    config.cache.synced_folder_opts = {
+        owner: "_apt",
+        mount_options: ["dmode=777", "fmode=666"],
+    }
+    if Vagrant.has_plugin?("vagrant-cachier")
+        config.cache.scope = :box
+    end
+    
+
+    config.vm.box = "ubuntu/bionic64"
+    config.vm.provision :shell, path: "internal/bootstrap.sh"
+    config.vm.synced_folder ".", "/vagrant"
+
+
+  config.vm.define "zentrale" do |zentrale|
+    zentrale.vm.network "private_network", ip: "10.0.0.4"
+    zentrale.vm.network "private_network", ip: "192.168.50.4"
+    zentrale.vm.hostname = "zentrale"
+  end
+
+  config.vm.define "branch" do |branch|
+    branch.vm.network "private_network", ip: "10.0.0.5"
+    branch.vm.network "private_network", ip: "192.168.40.4"
+    branch.vm.hostname = "branch"
+  end
+
+  config.vm.define "client" do |client|
+    client.vm.box = "peru/ubuntu-18.10-desktop-amd64"
+    client.vm.network "private_network", ip: "192.168.40.5"
+    client.vm.hostname = "client"
+  end
+
+
+    config.vm.provider "virtualbox" do |vb|
+        vb.memory = 2048
+        vb.cpus = 2
+
+        # performance tweak
+        vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+        vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+        vb.customize [ "guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 10000 ]
+    end
+
+    # Run at 'vagrant destroy' on VM
+    config.trigger.before :destroy do |trigger|
+      trigger.run_remote = {path:  "internal/destroy.sh"}
+    end
+
+    # Run at 'vagrant destroy' on Windows Host
+    config.trigger.after :destroy do |trigger|
+      trigger.run = {path: "internal/destroy.bat"}
+    end
+
+end
